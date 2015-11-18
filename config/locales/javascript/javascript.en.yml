@@ -278,6 +278,7 @@ en:
       search: "Search"
 
       recent_notifications: "Recent notifications"
+      recent_conversations: "Recent conversations"
       mark_all_as_read: "Mark all as read"
       view_all: "View all"
       close: "Close"
