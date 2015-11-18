@@ -51,7 +51,7 @@
               <ul class="dropdown-menu" role="menu">
                 <div class="header">
                   <div class="pull-right">
-                    <a href="#" id="mark_all_read_link" class="btn btn-default btn-sm {{#unless current_user.notifications_count}}disabled{{/unless}}">
+                    <a href="#" id="notification_mark_all_read_link" class="btn btn-default btn-sm {{#unless current_user.notifications_count}}disabled{{/unless}}">
                       {{t "header.mark_all_as_read"}}
                     </a>
                   </div>
@@ -73,13 +73,31 @@
 
             </li>
 
-            <li>
-              <a id="conversations-link" href="/conversations" title="{{t "header.conversations"}}" class="conversations-link nav-badge hidden-sm hidden-xs">
+            <li class="dropdown" id="conversation-dropdown">
+              <a id="conversations-link" href="/conversations" title="{{t "header.conversations"}}" class="conversations-link nav-badge hidden-sm hidden-xs" role="button" data-toggle="dropdown" aria-expanded="false" data-target="#">
                 <i class="entypo-mail"></i>
                 <span class="badge badge-important {{#unless current_user.unread_messages_count}} hidden {{/unless}}">
                   {{current_user.unread_messages_count}}
                 </span>
               </a>
+
+              <ul class="dropdown-menu" role="menu">
+                <div class="header">
+                  <h4>
+                    {{t "header.recent_conversations"}}
+                  </h4>
+                </div>
+                <div class="conversations">
+                  <div class="ajax-loader">
+                    <div class="spinner"></div>
+                  </div>
+                </div>
+                <div class="view_all">
+                  <a href="/conversations" id="view_all_conversations">
+                    {{t "header.view_all"}}
+                  </a>
+                </div>
+              </ul>
             </li>
           </ul>
 
