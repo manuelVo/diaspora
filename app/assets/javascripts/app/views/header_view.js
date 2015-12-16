@@ -14,7 +14,8 @@ app.views.Header = app.views.Base.extend({
 
   postRenderTemplate: function(){
     new app.views.Notifications({ el: "#notification-dropdown" });
-    this.notificationDropdown = new app.views.NotificationDropdown({ el: "#notification-dropdown" });
+    new app.views.NotificationDropdown({ el: "#notification-dropdown" });
+    new app.views.DropdownExt();
     new app.views.Search({ el: "#header-search-form" });
   },
 
